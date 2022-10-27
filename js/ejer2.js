@@ -63,6 +63,10 @@ function MenuEjercicios(nro_ejercicio){
         case 11:
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
+        case 13:
+            let cal= parseFloat(prompt("Ingrese Calificacion"));
+            alert(ej13_calcularCalificacion(cal))
+            break;
     }
 }
 
@@ -165,5 +169,12 @@ function ej11_bonoTrabajo(añoT){
         } else if (añoT > 5){
             return "Se le dara un bono de $1000";
         }
+    }
+}
+function ej13_calcularCalificacion(cal){
+    if(cal >= 10.5){
+        return ("La calificacion es APROBADO");
+    }else{
+        return ("La calificacion es DESAPROBADO");
     }
 }
