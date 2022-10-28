@@ -243,6 +243,8 @@ function ej14_cantidadFocos(focosT){
                 fVerde++;
             } else if (foco == "blanco"){
                 fBlanco++;
+            } else if(foco !== "rojo" || foco !== "verde" || foco !== "blanco"){
+                return "color no encontrado, digitar solo rojo, verde o blanco";
             }
         }
         return "Focos Verdes: " + fVerde +

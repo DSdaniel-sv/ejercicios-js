@@ -6,6 +6,9 @@
 body{
     margin-left: 10%;
     margin-right: 10%;
+    background-image: url(https://us.123rf.com/450wm/panychev/panychev1701/panychev170100086/70732089-fondo-oscuro-abstracto-con-la-imagen-de-los-n%C3%BAmeros-para-ilustrar-el-trabajo-de-dise%C3%B1o-de-la-criptog.jpg?ver=6);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 button{
     background-color: darkslateblue;
