@@ -190,3 +190,5 @@ function ej12_salarioProfesor (pSalario){
          return "el salrio en los 6 años es:$"+pSalario;
     }
 }
+
+
