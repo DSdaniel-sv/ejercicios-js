@@ -1,6 +1,6 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 13.Evaluar Calificación" )
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor. \r\n 13. Determinar aprobados y desaprobados. \r\n 15. Determinar edad para votar")
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -35,21 +35,26 @@ function MenuEjercicios(nro_ejercicio){
         case 5:
             let radio = parseFloat(prompt("Ingresa el radio: "));
             alert(ej5_calcularAreaCircunferencia(radio));
+            break;
         case 6:
             const salario = parseFloat(prompt("Ingrese salario: "));
             const horasT = parseFloat(prompt("Ingresar horas trabajadas: "));
             const diasT = parseFloat(prompt("Ingresar dias trabajados: "));
             alert (ej6_calcularSalario(salario, horasT, diasT));
+            break;
         case 7:
             const cantM = parseFloat(prompt("Escribir metros: "));
             alert (ej7_ConvertirMetrosPulgadas(cantM));
+            break;
         case 8:
             const soles = parseFloat(prompt("Cantidad de soles a ingresar: "));
             const dolar = parseFloat(prompt("Precio dolar: "));
             alert (ej8_ConvertirSolesDolar(soles, dolar));
+            break;
         case 9:
             const añoP = parseFloat(prompt("Digite año en que nacieron: "))
             alert(ej9_CalcularEdad(añoP));
+            break;
         case 10:
             const nom1 = prompt("Nombre persona 1: ");
             const edad1 = parseInt(prompt("Edad persona 1:"));
@@ -60,12 +65,22 @@ function MenuEjercicios(nro_ejercicio){
             const nom3 = prompt("Nombre persona 3: ");
             const edad3 = parseInt(prompt("Edad persona 3:"));
             alert(ej10_EdadMenor(nom1, edad1, nom2, edad2, nom3, edad3));
+            break;
         case 11:
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
+            break;
+        case 12:
+            const pSalario = parseInt(prompt("Ingrese salario"));
+            alert(ej12_salarioProfesor(pSalario));
+            break;
         case 13:
-            let cant= parseFloat(prompt("Ingrese Notas a Evaluar"));
-            alert(ej13_calcularCalificacion(cant));
+            const cantN = parseInt(prompt("Ingrese cantidad de notas: "));
+            alert(ej13_aprobadosDesaprobados(cantN));
+            break;
+        case 15:
+            const edadV = parseInt(prompt("Ingresar edad: "));
+            alert(ej15_edadVotar(edadV));
             break;
     }
 }
@@ -171,19 +186,52 @@ function ej11_bonoTrabajo(añoT){
         }
     }
 }
-// function ej13_calcularCalificacion(cal){
-//     if(cal >= 10.5){
-//         return ("La calificacion es APROBADO");
-//     }else{
-//         return ("La calificacion es DESAPROBADO");
-//     }
-// }
+function ej12_salarioProfesor (pSalario){
+    let sal =0;
+    let cantA;
 
-// function ej13_calcularCalificacion(cant){
-//     if (isNaN(cant)){
-//         return "Porfavor ingresar el dato";
-//     }else{
-//         let notas=[not];
-//         for 
-//     }
-// }
+    if (isNaN(pSalario)){
+        return "Debe ingresar el salario"
+    }else{
+        for (p = 1; p <= 6; p ++){
+            sal = pSalario * 0.10;
+            pSalario=pSalario+sal;
+            cantA=("El salario en el año "+p+" es: $"+pSalario);
+
+            // Resulto con el prompt no con el return
+            prompt(cantA);
+        }
+        return "el salrio en los 6 años es:$"+pSalario;
+    }
+}
+function ej13_aprobadosDesaprobados(cantN){
+    if(isNaN(cantN)){
+        return "Ingresar valores";
+    } else {
+        let contA = 0;
+        let contD = 0;
+        for(let i = 0; i < cantN; i++){
+            let nota = +(prompt("Ingrese nota " + (i + 1) + ": "));
+            if(nota >= 0 && nota <11){
+                contD++;
+            } else if(nota >= 11 && nota <= 20){
+                contA++;
+            }
+            // let resul = "Aprobados: " + contA + "\nDesaprobados: " + contD;
+        }
+        return "Aprobados: " + contA + "\nDesaprobados: " + contD;
+    }
+}
+function ej15_edadVotar(edadV){
+    if(isNaN(edadV)){
+        return "Porfavor poner valores";
+    } else {
+        if(edadV >= 0 && edadV < 18){
+            return "Es menor de edad, No puede votar"
+        } else if(edadV >= 18 && edadV < 65){
+            return "Es mayor de edad, si puede votar"
+        } else if(edadV > 65){
+            return "Es mayor pero es opcional votar"
+        }
+    }
+}
