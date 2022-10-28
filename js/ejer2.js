@@ -1,10 +1,6 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
-<<<<<<< HEAD
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12.Determinar salario por año.")
-=======
         prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor \r\n 15. Determinar edad para votar")
->>>>>>> main
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -68,16 +64,11 @@ function MenuEjercicios(nro_ejercicio){
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
         case 12:
-<<<<<<< HEAD
-            const salario_inicial = parseFloat(prompt("Ingresar sueldo inicial: "));
-            alert(ej12_SueldoxAño(salario_inicial));
-=======
             const pSalario = parseInt(prompt("Ingrese salario"));
             alert(ej12_salarioProfesor(pSalario));
         case 15:
             const edadV = parseInt(prompt("Ingresar edad: "));
             alert(ej15_edadVotar(edadV));
->>>>>>> main
     }
 }
 
