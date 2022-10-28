@@ -1,6 +1,6 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor. \r\n 13. Determinar aprobados y desaprobados. \r\n 15. Determinar edad para votar")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor. \r\n 13. Determinar aprobados y desaprobados. \r\n 14. Determinar colores foco ingresados. \r\n 15. Determinar edad para votar")
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -78,9 +78,15 @@ function MenuEjercicios(nro_ejercicio){
             const cantN = parseInt(prompt("Ingrese cantidad de notas: "));
             alert(ej13_aprobadosDesaprobados(cantN));
             break;
+        case 14:
+            const focosT = parseInt(prompt("Ingresar cantidad de focos: rojo, verde o blanco"));
+            alert(ej14_cantidadFocos(focosT));
+            break;
         case 15:
             const edadV = parseInt(prompt("Ingresar edad: "));
             alert(ej15_edadVotar(edadV));
+            break;
+        default:
             break;
     }
 }
@@ -220,6 +226,28 @@ function ej13_aprobadosDesaprobados(cantN){
             // let resul = "Aprobados: " + contA + "\nDesaprobados: " + contD;
         }
         return "Aprobados: " + contA + "\nDesaprobados: " + contD;
+    }
+}
+function ej14_cantidadFocos(focosT){
+    if(isNaN(focosT)){
+        return "Ingresar valores";
+    }else{
+        let fRojo = 0;
+        let fVerde = 0;
+        let fBlanco = 0;
+        for(let i = 0; i < focosT; i++){
+            let foco = prompt("Ingrese color foco " + (i +1) + ": ");
+            if(foco == "rojo"){
+                fRojo++;
+            } else if (foco == "verde"){
+                fVerde++;
+            } else if (foco == "blanco"){
+                fBlanco++;
+            }
+        }
+        return "Focos Verdes: " + fVerde +
+        "\nFocos Blancos: " + fBlanco +
+        "\nFocos Rojos: " + fRojo;
     }
 }
 function ej15_edadVotar(edadV){
