@@ -64,8 +64,8 @@ function MenuEjercicios(nro_ejercicio){
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
         case 13:
-            let cal= parseFloat(prompt("Ingrese Calificacion"));
-            alert(ej13_calcularCalificacion(cal))
+            let cant= parseFloat(prompt("Ingrese Notas a Evaluar"));
+            alert(ej13_calcularCalificacion(cant));
             break;
     }
 }
@@ -171,10 +171,19 @@ function ej11_bonoTrabajo(añoT){
         }
     }
 }
-function ej13_calcularCalificacion(cal){
-    if(cal >= 10.5){
-        return ("La calificacion es APROBADO");
-    }else{
-        return ("La calificacion es DESAPROBADO");
-    }
-}
+// function ej13_calcularCalificacion(cal){
+//     if(cal >= 10.5){
+//         return ("La calificacion es APROBADO");
+//     }else{
+//         return ("La calificacion es DESAPROBADO");
+//     }
+// }
+
+// function ej13_calcularCalificacion(cant){
+//     if (isNaN(cant)){
+//         return "Porfavor ingresar el dato";
+//     }else{
+//         let notas=[not];
+//         for 
+//     }
+// }
