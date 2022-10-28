@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Notas aprobadas y desaprobadas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let aprobadas, calificacion_aprobatoria, desaprobadas, nota_1, nota_2;
+    let nota_3;
+    calificacion_aprobatoria = parseFloat (document.formulario1.calificacion_aprobatoria.value);
+    nota_1 = parseFloat (document.formulario1.nota_1.value);
+    nota_2 = parseFloat (document.formulario1.nota_2.value);
+    nota_3 = parseFloat (document.formulario1.nota_3.value);
+    aprobadas=0;
+    desaprobadas=0;
+    if(nota_1<calificacion_aprobatoria)
+    {
+        desaprobadas=desaprobadas+1;
+        aprobadas=aprobadas+1;
+    }
+    if(nota_2<calificacion_aprobatoria)
+    {
+        desaprobadas=desaprobadas+1;
+        aprobadas=aprobadas+1;
+    }
+    if(nota_3<calificacion_aprobatoria)
+    {
+        desaprobadas=desaprobadas+1;
+        aprobadas=aprobadas+1;
+    }
+    document.formulario1.aprobadas.value = aprobadas;
+    document.formulario1.desaprobadas.value = desaprobadas;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="calificacion_aprobatoria">Ingresa el valor de calificacion aprobatoria:</label>
+                        </td>
+                        <td>
+                            <input name="calificacion_aprobatoria" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nota_1">Ingresa el valor de nota 1:</label>
+                        </td>
+                        <td>
+                            <input name="nota_1" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nota_2">Ingresa el valor de nota 2:</label>
+                        </td>
+                        <td>
+                            <input name="nota_2" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nota_3">Ingresa el valor de nota 3:</label>
+                        </td>
+                        <td>
+                            <input name="nota_3" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="aprobadas">Valor de aprobadas:</label>
+                        </td>
+                        <td>
+                            <input name="aprobadas" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="desaprobadas">Valor de desaprobadas:</label>
+                        </td>
+                        <td>
+                            <input name="desaprobadas" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
