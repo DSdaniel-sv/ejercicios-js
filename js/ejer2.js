@@ -1,6 +1,10 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
+<<<<<<< HEAD
         prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12.Determinar salario por año.")
+=======
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor \r\n 15. Determinar edad para votar")
+>>>>>>> main
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -64,8 +68,16 @@ function MenuEjercicios(nro_ejercicio){
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
         case 12:
+<<<<<<< HEAD
             const salario_inicial = parseFloat(prompt("Ingresar sueldo inicial: "));
             alert(ej12_SueldoxAño(salario_inicial));
+=======
+            const pSalario = parseInt(prompt("Ingrese salario"));
+            alert(ej12_salarioProfesor(pSalario));
+        case 15:
+            const edadV = parseInt(prompt("Ingresar edad: "));
+            alert(ej15_edadVotar(edadV));
+>>>>>>> main
     }
 }
 
@@ -170,19 +182,35 @@ function ej11_bonoTrabajo(añoT){
         }
     }
 }
-function ej12_SueldoxAño(salario_inicial){
-    if(isNaN(salario_inicial)){
-        return "Debe ingresar dato"
+function ej12_salarioProfesor (pSalario){
+    let sal =0;
+    let cantA;
+
+    if (isNaN(pSalario)){
+        return "Debe ingresar el salario"
+    }else{
+        for (p = 1; p <= 6; p ++){
+            sal = pSalario * 0.10;
+            pSalario=pSalario+sal;
+            cantA=("El salario en el año "+p+" es: $"+pSalario);
+
+            // Resulto con el prompt no con el return
+
+            prompt(cantA);
+        }
+         return "el salrio en los 6 años es:$"+pSalario;
+    }
+}
+function ej15_edadVotar(edadV){
+    if(isNaN(edadV)){
+        return "Porfavor poner valores";
     } else {
-        let salarioI;
-        let salario_recibido, año;
-        for(let i = 1; i<=6; i++){
-            salarioI = salario_inicial;
-            año = i;
-            salario_recibido = salario_inicial * Math.pow(1.1,año);
-            prompt("Valor salario inicial: " + salarioI 
-            + "\n" + "Valor salario recibido: " + salario_recibido
-            + "\n" + "Año: " + año);
+        if(edadV >= 0 && edadV < 18){
+            return "Es menor de edad, No puede votar"
+        } else if(edadV >= 18 && edadV < 65){
+            return "Es mayor de edad, si puede votar"
+        } else if(edadV > 65){
+            return "Es mayor pero es opcional votar"
         }
     }
 }
