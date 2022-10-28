@@ -1,6 +1,6 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador.")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12.Determinar salario por año.")
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -63,6 +63,9 @@ function MenuEjercicios(nro_ejercicio){
         case 11:
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
+        case 12:
+            const salario_inicial = parseFloat(prompt("Ingresar sueldo inicial: "));
+            alert(ej12_SueldoxAño(salario_inicial));
     }
 }
 
@@ -164,6 +167,22 @@ function ej11_bonoTrabajo(añoT){
             return "Se le dara un bono de $500";
         } else if (añoT > 5){
             return "Se le dara un bono de $1000";
+        }
+    }
+}
+function ej12_SueldoxAño(salario_inicial){
+    if(isNaN(salario_inicial)){
+        return "Debe ingresar dato"
+    } else {
+        let salarioI;
+        let salario_recibido, año;
+        for(let i = 1; i<=6; i++){
+            salarioI = salario_inicial;
+            año = i;
+            salario_recibido = salario_inicial * Math.pow(1.1,año);
+            prompt("Valor salario inicial: " + salarioI 
+            + "\n" + "Valor salario recibido: " + salario_recibido
+            + "\n" + "Año: " + año);
         }
     }
 }
