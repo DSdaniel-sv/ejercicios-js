@@ -1,6 +1,6 @@
 function callMenu(){
     let nro_ejercicio= parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador.")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de exmamenes \r\n 3.Calcular el area de un rectangulo \r\n 4.Calcular el area de un triangulo \r\n 5.Calcular el area de una circunferencia \r\n 6.Calcular el sueldo semanal de un trabajador. \r\n 7.Convertir metros a pulgadas \r\n 8.Convertir soles a dolares \r\n 9.Determinar edad de persona \r\n 10.Determinar persona de menor edad. \r\n 11.Determinar bono de trabajador. \r\n 12. Determinar Salaio de 6 años de un profesor" )
     );
     if(isNaN(nro_ejercicio)){
         alert ("hey!! por fvor ingresa valores ")
@@ -63,6 +63,9 @@ function MenuEjercicios(nro_ejercicio){
         case 11:
             const añoT = parseInt(prompt("Ingresar cuantos años tiene en la empresa: "));
             alert(ej11_bonoTrabajo(añoT));
+        case 12:
+            const pSalario = parseInt(prompt("Ingrese salario"));
+            alert(ej12_salarioProfesor(pSalario));
     }
 }
 
@@ -165,5 +168,25 @@ function ej11_bonoTrabajo(añoT){
         } else if (añoT > 5){
             return "Se le dara un bono de $1000";
         }
+    }
+}
+
+function ej12_salarioProfesor (pSalario){
+    let sal =0;
+    let cantA;
+
+    if (isNaN(pSalario)){
+        return "Debe ingresar el salario"
+    }else{
+        for (p = 1; p <= 6; p ++){
+            sal = pSalario * 0.10;
+            pSalario=pSalario+sal;
+            cantA=("El salario en el año "+p+" es: $"+pSalario);
+
+            // Resulto con el prompt no con el return
+
+            prompt(cantA);
+        }
+         return "el salrio en los 6 años es:$"+pSalario;
     }
 }
